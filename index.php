@@ -113,7 +113,11 @@
 			{"type": "file", "name": "info.html", "icon_src": file_icon_location, "file_src": "info.html"},
 		];
 
-		editor_window($('.editor_window_container'), project_address, project_title, menu_items_file_location, menu_items);
+		var title_bar_height = 25;
+		var open_files_menu_bar_height = 30;
+		var navigation_menu_bar_for_mob = 200;
+
+		editor_window($('.editor_window_container'), project_address, project_title, menu_items_file_location, menu_items, title_bar_height, open_files_menu_bar_height, navigation_menu_bar_for_mob);
 	</script>
 </body>
 </html>
