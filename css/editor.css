@@ -192,7 +192,7 @@
 		vertical-align: middle;
 		height: 100%;
 
-		display: flex; 	
+		display: flex;
 	  	align-items: center; 
 	}
 
@@ -257,13 +257,14 @@
 	}
 
 	.open_files_menu_bar
-	{
+	{		
 		padding: 0px;
 		margin: 0px;
 		background: #181915;
 		height: 100%;
-		width: 100%;
-		overflow-y: scroll;
+		min-width: 100%;
+		width: auto;
+		overflow-x: scroll;
 		list-style: none;
 	}
 
@@ -277,31 +278,31 @@
 	}
 
 	.open_files_menu_card
-	{		
+	{
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+
 		padding: 0px;
 		margin: 0px;
 		margin-left: 5px;
 		padding-left: 10px;
 		padding-right: 10px;		
-		
-		display: inline-block; 	
+				
 	  	font-size: 90%;
-		height: 90%;
+		height: 100%;
 		width: 150px;
 		
 		background: #21221d;
-		color: #80807f;	
+		color: #e2e2e2;	
 		border-radius: 10px 10px 0px 0px;
 		cursor: default;
 	}
 
-	.open_files_menu_card div
-	{
-		display: inline-block;
-	}
-
 	.open_files_menu_card span
 	{
+		position: absolute;
+		right: 5px;
 		float: right;
 		cursor: pointer;
 	}
@@ -316,7 +317,6 @@
 
 	.nav_bar_options, .nav_bar_options ul
 	{
-
 		list-style: none;		
 		color: #c8c9c7;
 		padding-left: 10px;
