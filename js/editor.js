@@ -13,9 +13,231 @@
 	}
 
 //function to load editor window
-	function editor_window(_this_, project_address, project_title)
+	function editor_window(_this_, project_address, project_title, menu_items_file_location, menu_items)
 	{
-		var html = '<div class="row title_bar"><div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 title_bar_buttons"><div id="title_bar_close_btn"></div><div id="title_bar_mini_btn"></div><div id="title_bar_maxi_btn"></div></div><div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 title_bar_title"><div class="file_name_address">' + project_address + '&nbsp</div><div style="display: inline-block;" id="opened_file_name_in_title_bar"> </div><div class="file_name_address"> - ' + project_title + '</div></div><div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div></div></div><div class="row nav_bar_file_container"><div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 navigation_menu_bar"><div id="FOLDERS_Name">FOLDERS</div><ul class="nav_bar_options"></ul></div>';
+		var menuItemHTML = "";
+		for(i in menu_items)
+		{
+			var type = menu_items[i]['type'];
+			var tempHTML = "";
+
+			if(type == "folder_title")
+			{
+				var name = menu_items[i]['name'];
+				var icon_src = menu_items[i]['icon_src'];
+
+				tempHTML = '<div><img class="nav_bar_folder_icon" src="' + icon_src + '"><span> ' + name + '</span></div>';
+			}
+			else if(type == "file")
+			{
+				var name = menu_items[i]['name'];
+				var icon_src = menu_items[i]['icon_src'];
+				var file_src = menu_items[i]['file_src'];
+
+				tempHTML = '<li src="' + file_src + '"><img class="nav_bar_folder_icon" src="' + icon_src + '"><span> ' + name + '</span></li>';
+			}
+			else if(type == "file_group")
+			{
+				var isFirstUlItem = true;
+				tempHTML += '<li>';
+				for(j in menu_items[i]['files'])
+				{
+					var files = menu_items[i]['files'][j];
+					var type2 = files['type'];
+					
+					if(type2 == "folder_title")
+					{
+						var name = files['name'];
+						var icon_src = files['icon_src'];
+
+						tempHTML += '<div><img class="nav_bar_folder_icon" src="' + icon_src + '"><span> ' + name + '</span></div>';
+					}
+					else if(type2 == "file")
+					{
+						var name = files['name'];
+						var icon_src = files['icon_src'];
+						var file_src = files['file_src'];
+
+						if(isFirstUlItem)
+						{
+							tempHTML += '<ul><li src="' + file_src + '"><img class="nav_bar_folder_icon" src="' + icon_src + '"><span> ' + name + '</span></li>';
+							isFirstUlItem = false;
+						}
+						else
+							tempHTML += '<li src="' + file_src + '"><img class="nav_bar_folder_icon" src="' + icon_src + '"><span> ' + name + '</span></li>';
+					}
+				}
+				tempHTML += '</ul></li>'
+			}
+			
+			menuItemHTML += tempHTML;
+		}
+
+		var html = '<div class="row title_bar"><div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 title_bar_buttons"><div id="title_bar_close_btn"></div><div id="title_bar_mini_btn"></div><div id="title_bar_maxi_btn"></div></div><div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 title_bar_title"><div class="file_name_address">' + project_address + '&nbsp</div><div style="display: inline-block;" id="opened_file_name_in_title_bar"> </div><div class="file_name_address"> - ' + project_title + '</div></div><div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div></div></div><div class="row nav_bar_file_container"><div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 navigation_menu_bar"><div id="FOLDERS_Name">FOLDERS</div><ul class="nav_bar_options">' + menuItemHTML + '</ul></div><div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 file_container"><div class="row"><ul class="col-lg-12 col-md-12 col-sm-12 col-xs-12 open_files_menu_bar"><li class="open_files_menu_card" id="open_files_menu_card_sample"><div>sample.txt</div><span>x</span></li><li class="open_files_menu_card" style="width: auto; opacity: 0;">x<span>x</span></li></ul><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 file_opener"></div></div></div>';
 	
 		$(_this_).html(html);
+
+	//blank will be opened by default
+		$('.file_opener').load("html/blank.html");
+
+	//on selecting on menu	
+		$('.nav_bar_options li').click(function()
+		{
+			var src = $(this).attr('src');
+
+			var selected_li_display = $(this).find('ul');
+			if(selected_li_display[0] == undefined) //it does not contains sub list then highlighting it ans displaying content
+			{
+				$(this).css('background', '#282923');
+				$('.nav_bar_options li').not(this).css('background', 'none');			
+
+				$('.file_opener').load("html/" + src, function()
+				{
+				//creating card of the opened file	
+					$('.open_files_menu_bar li').css("background", '#21221d'); //dehighlting other elements
+
+					$('.open_files_menu_bar #open_files_menu_card_sample div').text(src);
+
+					var html = $('.open_files_menu_bar #open_files_menu_card_sample').html().trim();
+					html = '<li class="open_files_menu_card" style="background: #282923;">' + html + '</li>';
+					$('.open_files_menu_bar').append(html);
+
+				//on clicking x of open_files_menu_card
+					$('.open_files_menu_card span').off().on("click", function()
+					{
+						handleClosingOfCard($(this));
+					});
+
+				//on clicking on that card
+					$('.open_files_menu_card').off().on("click", function()
+					{
+						handleSelectACard($(this));
+					});
+				});							
+			}
+		});
+
+	//on clicking x of open_files_menu_card
+		$('.open_files_menu_card span').off().on("click", function()
+		{
+			handleClosingOfCard($(this));
+		});
+
+		function handleClosingOfCard(e)
+		{		
+			var src = e.parent().prev().find("div").text().trim();
+			var li_count = $('.open_files_menu_bar li').length;
+
+			// console.log(src);
+			// console.log(li_count);
+
+			if(src == "")
+			{
+				if(li_count == 3) //if it is the last card
+				{
+					src = "blank.html";
+				}
+				else //if closing the first card //but more cards are available
+				{
+				//then showing card next-right to it
+					var src = $('.open_files_menu_bar li:nth-child(4)').find("div").text().trim();
+
+				//highligting the nth element
+					$('.open_files_menu_bar li').css("background", '#21221d'); //dehighlting other elements
+					$('.open_files_menu_bar li:nth-child(4)').css("background", '#282923');
+				}
+			}
+			else
+			{
+			//highliting its previous element
+				$('.open_files_menu_bar li').css("background", '#21221d'); //dehighlting other elements
+				e.parent().prev().css("background", '#282923');
+			}
+
+		//loading the required page	
+			$('.file_opener').load("html/" + src);
+			
+		//deleting that card	
+			e.parent().remove();
+		}
+
+	//for making any open file card active (on cliking on that card) and others inactive
+		$('.open_files_menu_card').off().on("click", function()
+		{
+			handleSelectACard($(this));
+		});
+
+		function handleSelectACard(e)
+		{				
+		//loading content of that card	
+			var src = (e.find('div').text());
+			$('.file_opener').load("html/" + src, function()
+			{
+				$('.open_files_menu_bar .open_files_menu_card').not(e).css("background-color", '#21221d'); //dehighlighting other cards
+				e.css("background-color", '#282923'); //highlighting this card	
+			});
+		}
+
+	//for showing sub menu
+		$('.nav_bar_options li').click(function()
+		{
+			var selected_li_display = $(this).find('ul').css('display');
+			if(selected_li_display =='none')
+			{
+				$(this).find('ul').slideDown(300);
+				$('.nav_bar_options li').not(this).find('ul').slideUp(300);
+			}
+		});
+
+	//getting window height
+		var window_height = $(window).height();
+		var window_width = $(window).width();
+
+	//setting height of title bar	
+		var title_bar_height = 25;
+		$('.title_bar').css('height', title_bar_height+"px");
+
+	//on hovering over title bar buttons
+		$('.title_bar_buttons div').hover(function()
+		{
+			var color = $(this).css('background-color');
+			$(this).css('box-shadow', "0 0 3px " + color);
+		}, function()
+		{
+	    	$(this).css('box-shadow', "");
+		});
+
+	//setting height of nav_bar_file_container and nav menu bar
+		var open_files_menu_bar_height = 30;
+		var navigation_menu_bar_for_mob = 200;
+
+		updateContainerOnResizing(window_height, window_width, title_bar_height, navigation_menu_bar_for_mob);
+
+		function updateContainerOnResizing(window_height, window_width, title_bar_height, navigation_menu_bar_for_mob)
+		{
+			$('.open_files_menu_bar').css('height', open_files_menu_bar_height + "px");		
+
+			if(window_width>767)
+			{
+				$('.nav_bar_file_container').css('margin-top', title_bar_height + "px");
+				$('.nav_bar_file_container').css('height', window_height-title_bar_height-20 + "px");
+				$('.navigation_menu_bar').css('height', "100%");
+				$('.file_container').css('height', "100%");
+			}
+			else
+			{
+				$('.nav_bar_file_container').css('margin-top', title_bar_height + "px");
+				$('.nav_bar_file_container').css('height', window_height-title_bar_height + "px");
+				$('.navigation_menu_bar').css('height', navigation_menu_bar_for_mob + "px");
+				$('.file_container').css('height', window_height-(title_bar_height + navigation_menu_bar_for_mob) + "px");
+			}
+		}
+
+	// on resizing window
+		$(window).on('resize', function()
+		{
+			var window_height = $(window).height();
+			var window_width = $(window).width();
+			updateContainerOnResizing(window_height, window_width, title_bar_height, navigation_menu_bar_for_mob);
+		});
 	}

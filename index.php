@@ -59,6 +59,7 @@
 
 		var folder_icon_location = "img/folder.png";
 		var file_icon_location = "img/file2.png";
+		var menu_items_file_location = "html/";
 
 		var menu_items = 
 		[
@@ -66,32 +67,44 @@
 			{"type": "file", "name": "about_me.html", "icon_src": file_icon_location, "file_src": "about_me.html"},
 			{"type": "file", "name": "contact_me.html", "icon_src": file_icon_location, "file_src": "contact_me.html"},
 			{"type": "file", "name": "education.html", "icon_src": file_icon_location, "file_src": "education.html"},
-			[
-				{"type": "folder_title", "name": "internship_experience", "icon_src": folder_icon_location, "file_src": ""},
-				{"type": "file", "name": "ISRO Telemetry, Tracking and Command Network (ISTRAC).html", "icon_src": file_icon_location, "file_src": "isro_intern.html"},
-				{"type": "file", "name": "Oxyvin Technologies (OPC) Pvt Ltd.html", "icon_src": file_icon_location, "file_src": "oxyvin_intern.html"},
-				{"type": "file", "name": "NGCN Infosolutions Pvt Ltd.html", "icon_src": file_icon_location, "file_src": "ngcn_intern.html"},
-				{"type": "file", "name": "CatchFreeDeal.html", "icon_src": file_icon_location, "file_src": "catchfreedeal.html"}
-			],
-			[
-				{"type": "folder_title", "name": "academic_projects", "icon_src": folder_icon_location, "file_src": ""},
-				{"type": "file", "name": "Key Issue System for IIT Patna.html", "icon_src": file_icon_location, "file_src": "key_issue.html"},
-				{"type": "file", "name": "Notice Board IIT Patna.html", "icon_src": file_icon_location, "file_src": "notice_board.html"},
-				{"type": "file", "name": "IPR Module for IIT Patna.html", "icon_src": file_icon_location, "file_src": "ipr.html"},
-				{"type": "file", "name": "Wi-Fi Based Attendance System for IIT Patna.html", "icon_src": file_icon_location, "file_src": "wifi_attend.html"},
-				{"type": "file", "name": "QR Based Attendance System for IIT Patna.html", "icon_src": file_icon_location, "file_src": "qr_attend.html"},
-				{"type": "file", "name": "Calculator.html", "icon_src": file_icon_location, "file_src": "calc.html"}
-			],
-			[
-				{"type": "folder_title", "name": "other_projects", "icon_src": folder_icon_location, "file_src": ""},
-				{"type": "file", "name": "ChatApp.html", "icon_src": file_icon_location, "file_src": "chatapp.html"},
-				{"type": "file", "name": "MNgo Notes.html", "icon_src": file_icon_location, "file_src": "mngonotes.html"},
-				{"type": "file", "name": "MNgo Drive.html", "icon_src": file_icon_location, "file_src": "mngodrive.html"},
-				{"type": "file", "name": "Wi-Fi Based Chatting App.html", "icon_src": file_icon_location, "file_src": "wifi_chatapp.html"},
-				{"type": "file", "name": "QR Code Scanner & Generator.html", "icon_src": file_icon_location, "file_src": "qr_app.html"},
-				{"type": "file", "name": "Anwesha 2k18 Website’s front-end.html", "icon_src": file_icon_location, "file_src": "anwesha_2k18.html"},
-				{"type": "file", "name": "IITP Motorsports Website.html", "icon_src": file_icon_location, "file_src": "iitp_motor.html"},
-			],
+			{
+				"type": "file_group",
+				"files":
+				[
+					{"type": "folder_title", "name": "internship_experience", "icon_src": folder_icon_location, "file_src": ""},
+					{"type": "file", "name": "ISRO Telemetry, Tracking and Command Network (ISTRAC).html", "icon_src": file_icon_location, "file_src": "isro_intern.html"},
+					{"type": "file", "name": "Oxyvin Technologies (OPC) Pvt Ltd.html", "icon_src": file_icon_location, "file_src": "oxyvin_intern.html"},
+					{"type": "file", "name": "NGCN Infosolutions Pvt Ltd.html", "icon_src": file_icon_location, "file_src": "ngcn_intern.html"},
+					{"type": "file", "name": "CatchFreeDeal.html", "icon_src": file_icon_location, "file_src": "catchfreedeal.html"}
+				],
+			},
+			{
+				"type": "file_group",
+				"files":
+				[
+					{"type": "folder_title", "name": "academic_projects", "icon_src": folder_icon_location, "file_src": ""},
+					{"type": "file", "name": "Key Issue System for IIT Patna.html", "icon_src": file_icon_location, "file_src": "key_issue.html"},
+					{"type": "file", "name": "Notice Board IIT Patna.html", "icon_src": file_icon_location, "file_src": "notice_board.html"},
+					{"type": "file", "name": "IPR Module for IIT Patna.html", "icon_src": file_icon_location, "file_src": "ipr.html"},
+					{"type": "file", "name": "Wi-Fi Based Attendance System for IIT Patna.html", "icon_src": file_icon_location, "file_src": "wifi_attend.html"},
+					{"type": "file", "name": "QR Based Attendance System for IIT Patna.html", "icon_src": file_icon_location, "file_src": "qr_attend.html"},
+					{"type": "file", "name": "Calculator.html", "icon_src": file_icon_location, "file_src": "calc.html"}
+				],
+			},
+			{
+				"type": "file_group",
+				"files":
+				[
+					{"type": "folder_title", "name": "other_projects", "icon_src": folder_icon_location, "file_src": ""},
+					{"type": "file", "name": "ChatApp.html", "icon_src": file_icon_location, "file_src": "chatapp.html"},
+					{"type": "file", "name": "MNgo Notes.html", "icon_src": file_icon_location, "file_src": "mngonotes.html"},
+					{"type": "file", "name": "MNgo Drive.html", "icon_src": file_icon_location, "file_src": "mngodrive.html"},
+					{"type": "file", "name": "Wi-Fi Based Chatting App.html", "icon_src": file_icon_location, "file_src": "wifi_chatapp.html"},
+					{"type": "file", "name": "QR Code Scanner & Generator.html", "icon_src": file_icon_location, "file_src": "qr_app.html"},
+					{"type": "file", "name": "Anwesha 2k18 Website’s front-end.html", "icon_src": file_icon_location, "file_src": "anwesha_2k18.html"},
+					{"type": "file", "name": "IITP Motorsports Website.html", "icon_src": file_icon_location, "file_src": "iitp_motor.html"},
+				],
+			},
 			{"type": "file", "name": "achievements.html", "icon_src": file_icon_location, "file_src": "achievements.html"},
 			{"type": "file", "name": "skills_and_interests.html", "icon_src": file_icon_location, "file_src": "skills_n_intr.html"},
 			{"type": "file", "name": "position_of_responsibility.html", "icon_src": file_icon_location, "file_src": "por.html"},
@@ -100,9 +113,7 @@
 			{"type": "file", "name": "info.html", "icon_src": file_icon_location, "file_src": "info.html"},
 		];
 
-		console.log(menu_items);
-
-		editor_window($('.editor_window_container'), project_address, project_title);
+		editor_window($('.editor_window_container'), project_address, project_title, menu_items_file_location, menu_items);
 	</script>
 </body>
 </html>
