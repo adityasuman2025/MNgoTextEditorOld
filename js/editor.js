@@ -81,7 +81,7 @@
 		$(_this_).html(html);
 
 	//blank will be opened by default
-		$('.file_opener').load("html/blank.html");
+		$('.file_opener').load(menu_items_file_location + "blank.html");
 
 	//on hovering over title bar buttons
 		$('.title_bar_buttons div').hover(function()
