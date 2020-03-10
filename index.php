@@ -1,18 +1,22 @@
 <!-------counter & ip tracking-------->
 <?php
-	$ip = $_SERVER["REMOTE_ADDR"];
-	date_default_timezone_set('Asia/Kolkata');
-	$time = date ("H:i:s", time());
-	$date = date ("d M Y", time());
+	$website = $_SERVER['HTTP_HOST']; //dns address of the site 
+	if($website != "localhost")
+	{
+		$ip = $_SERVER["REMOTE_ADDR"];
+		date_default_timezone_set('Asia/Kolkata');
+		$time = date ("H:i:s", time());
+		$date = date ("d M Y", time());
 
-	$handleip =fopen('ip.txt', 'a');
-	$handlecnt= fopen('count.txt', 'r');
-	$currentcnt= fread($handlecnt, 1342177);
-	fwrite($handleip, "$currentcnt :---> \t \t $ip  \t \t Time :--> \t $time \t \t Date:--> \t $date \n");
+		$handleip =fopen('ip.txt', 'a');
+		$handlecnt= fopen('count.txt', 'r');
+		$currentcnt= fread($handlecnt, 1342177);
+		fwrite($handleip, "$currentcnt :---> \t \t $ip  \t \t Time :--> \t $time \t \t Date:--> \t $date \n");
 
-	$newcnt= $currentcnt + 1;
-	$handlecnt= fopen('count.txt', 'w');
-	fwrite($handlecnt, $newcnt);	
+		$newcnt= $currentcnt + 1;
+		$handlecnt= fopen('count.txt', 'w');
+		fwrite($handlecnt, $newcnt);
+	}
 ?>
 
 <!-------counter & ip tracking-------->
