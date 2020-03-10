@@ -53,8 +53,8 @@
 <!---script---------->
 	<script type="text/javascript">
 	//preloader stuffs
-		var preloader_file_location = "preloader_new.php";
-		var timeout_time = 100;
+		var preloader_file_location = "preloader.html";
+		var timeout_time = 200;
 		preloader($('.preloader_container'), preloader_file_location, timeout_time);
 
 	//main window stuffs
