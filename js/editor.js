@@ -94,26 +94,29 @@
 		});
 
 	//on selecting menu	items
+		active_menu_items_in_card = [];
+
 		$('.nav_bar_options li').click(function()
 		{
 			var src = $(this).attr('src');
 
 			var selected_li_display = $(this).find('ul');
-			if(selected_li_display[0] == undefined) //it does not contains sub list then highlighting it ans displaying content
+			if(selected_li_display[0] == undefined) //if it does not contains sub list then highlighting it and displaying content
 			{
+			//highlighting that item in menu bar	
 				$(this).css('background', '#282923');
 				$('.nav_bar_options li').not(this).css('background', 'none');			
 
-				$('.file_opener').load(menu_items_file_location + src, function()
+			//checking if that menu item is already present in card or not
+				if(active_menu_items_in_card.includes(src)) //if already present
 				{
-				//creating card of the opened file	
-					$('.open_files_menu_bar li').css("background", '#21221d'); //dehighlting other elements
-
-					$('.open_files_menu_bar #open_files_menu_card_sample div').text(src);
-
-					var html = $('.open_files_menu_bar #open_files_menu_card_sample').html().trim();
-					html = '<li class="open_files_menu_card" style="background: #282923;">' + html + '</li>';
-					$('.open_files_menu_bar').append(html);
+				//opening content of that menu item and highlighting its card
+					$('.open_files_menu_card').each(function()
+					{
+						var text = $(this).find('div').text().trim();
+						if(text == src)
+							handleSelectACard($(this));
+					});
 
 				//on clicking x (close btn) of open_files_menu_card
 					$('.open_files_menu_card span').off().on("click", function()
@@ -126,7 +129,36 @@
 					{
 						handleSelectACard($(this));
 					});
-				});							
+				}
+				else
+				{
+					active_menu_items_in_card.push(src);
+
+				//opening content of that menu item
+					$('.file_opener').load(menu_items_file_location + src, function()
+					{
+					//creating card of the opened file	
+						$('.open_files_menu_bar li').css("background", '#21221d'); //de-highlighting other cards
+
+						$('.open_files_menu_bar #open_files_menu_card_sample div').text(src);
+
+						var html = $('.open_files_menu_bar #open_files_menu_card_sample').html().trim();
+						html = '<li class="open_files_menu_card" style="background: #282923;">' + html + '</li>';
+						$('.open_files_menu_bar').append(html);
+
+					//on clicking x (close btn) of open_files_menu_card
+						$('.open_files_menu_card span').off().on("click", function()
+						{
+							handleClosingOfCard($(this));
+						});
+
+					//for making any open file card active (on cliking on that card) and others inactive
+						$('.open_files_menu_card').off().on("click", function()
+						{
+							handleSelectACard($(this));
+						});
+					});
+				}
 			}
 		});
 
@@ -184,10 +216,15 @@
 //function for closing any window card
 	function handleClosingOfCard(e)
 	{
+	//removing that card from array of active menu items in card
+		var this_crad_src = e.parent().find("div").text().trim();
+		active_menu_items_in_card = remove_array_element(active_menu_items_in_card, this_crad_src);
+
+	//getting the previous card of that card (which is to be closed)	
 		var src = e.parent().prev().find("div").text().trim();
 		var li_count = $('.open_files_menu_bar li').length;
 
-		if(src == "")
+		if(src == "") //if no any prev element is present
 		{
 			if(li_count == 3) //if it is the last card
 			{
@@ -227,4 +264,14 @@
 			$('.open_files_menu_bar .open_files_menu_card').not(e).css("background-color", '#21221d'); //dehighlighting other cards
 			e.css("background-color", '#282923'); //highlighting this card	
 		});
+	}
+
+//function to remove a specific element from an array
+	function remove_array_element(array, n)
+	{
+		var index = array.indexOf(n);
+		if (index > -1) {
+			array.splice(index, 1);
+		}
+		return array;
 	}
