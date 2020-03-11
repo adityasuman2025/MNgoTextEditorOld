@@ -100,7 +100,7 @@
 				"files":
 				[
 					{"type": "folder_title", "name": "other_projects", "icon_src": folder_icon_location, "file_src": ""},
-					{"type": "file", "name": "ChatApp.html", "icon_src": file_icon_location, "file_src": "chatapp.html"},
+					{"type": "file", "name": "MNgo ChatApp.html", "icon_src": file_icon_location, "file_src": "mngo_chatapp.html"},
 					{"type": "file", "name": "MNgo Notes.html", "icon_src": file_icon_location, "file_src": "mngo_notes.html"},
 					{"type": "file", "name": "MNgo Drive.html", "icon_src": file_icon_location, "file_src": "mngo_drive.html"},
 					{"type": "file", "name": "MNgo Text Editor.html", "icon_src": file_icon_location, "file_src": "mngo_editor.html"},
