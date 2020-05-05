@@ -76,6 +76,7 @@
 				"files":
 				[
 					{"type": "folder_title", "name": "internship_experience", "icon_src": folder_icon_location, "file_src": ""},
+					{"type": "file", "name": "UpBrinGO.html", "icon_src": file_icon_location, "file_src": "upbringo_intern.html"},
 					{"type": "file", "name": "ISRO Telemetry, Tracking and Command Network (ISTRAC).html", "icon_src": file_icon_location, "file_src": "isro_intern.html"},
 					{"type": "file", "name": "Oxyvin Technologies (OPC) Pvt Ltd.html", "icon_src": file_icon_location, "file_src": "oxyvin_intern.html"},
 					{"type": "file", "name": "NGCN Infosolutions Pvt Ltd.html", "icon_src": file_icon_location, "file_src": "ngcn_intern.html"},
@@ -102,11 +103,11 @@
 					{"type": "folder_title", "name": "other_projects", "icon_src": folder_icon_location, "file_src": ""},
 					{"type": "file", "name": "MNgo ChatApp.html", "icon_src": file_icon_location, "file_src": "mngo_chatapp.html"},
 					{"type": "file", "name": "MNgo Notes.html", "icon_src": file_icon_location, "file_src": "mngo_notes.html"},
-					{"type": "file", "name": "MNgo Drive.html", "icon_src": file_icon_location, "file_src": "mngo_drive.html"},
 					{"type": "file", "name": "MNgo Text Editor.html", "icon_src": file_icon_location, "file_src": "mngo_editor.html"},
+					{"type": "file", "name": "MNgo Drive.html", "icon_src": file_icon_location, "file_src": "mngo_drive.html"},
+					{"type": "file", "name": "MNgo QR.html", "icon_src": file_icon_location, "file_src": "mngo_qr.html"},
 					{"type": "file", "name": "Wi-Fi Based Chatting App.html", "icon_src": file_icon_location, "file_src": "wifi_chatapp.html"},
 					{"type": "file", "name": "Football Club", "icon_src": file_icon_location, "file_src": "football_club.html"},
-					{"type": "file", "name": "QR Code Scanner & Generator.html", "icon_src": file_icon_location, "file_src": "qr_app.html"},
 					{"type": "file", "name": "Anwesha 2k18 Website’s front-end.html", "icon_src": file_icon_location, "file_src": "anwesha_2k18.html"},
 					{"type": "file", "name": "IITP Motorsports Website.html", "icon_src": file_icon_location, "file_src": "iitp_motor.html"},
 				],
@@ -121,9 +122,10 @@
 
 		var title_bar_height = 25;
 		var open_files_menu_bar_height = 30;
-		var navigation_menu_bar_for_mob = 200;
+		var navigation_menu_bar_height_for_mob = 200; //height
 
-		editor_window($('.editor_window_container'), project_address, project_title, menu_items_file_location, menu_items, title_bar_height, open_files_menu_bar_height, navigation_menu_bar_for_mob);
+	//calling the function (fron my library, editor.js) which makes the text-editor window from given menu-item JSON and other values 
+		editor_window($('.editor_window_container'), project_address, project_title, menu_items_file_location, menu_items, title_bar_height, open_files_menu_bar_height, navigation_menu_bar_height_for_mob);
 	</script>
 </body>
 </html>
