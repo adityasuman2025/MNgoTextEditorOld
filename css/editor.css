@@ -180,8 +180,9 @@
 		width: 100%;
 		position: fixed;
 		/*height: 25px;*/
-		background-color: #e5e5e5;
-		background-image: linear-gradient(to bottom, #e5e5e5 0%, #d5d5d5 74%);
+		background-color: #282923;
+		background-image: linear-gradient(to bottom, #282923 0%, #22231f 74%);
+		border-bottom: 1px solid #282923;
 	}
 
 	.title_bar_buttons
@@ -225,6 +226,7 @@
 	.title_bar_title
 	{
 		color: #5b5b5b;
+		color: #9a9a98;
 		text-align: center;
 		height: 100%;
 		line-height: 25px;

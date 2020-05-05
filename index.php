@@ -120,7 +120,7 @@
 			{"type": "file", "name": "info.html", "icon_src": file_icon_location, "file_src": "info.html"},
 		];
 
-		var title_bar_height = 25;
+		var title_bar_height = 28;
 		var open_files_menu_bar_height = 30;
 		var navigation_menu_bar_height_for_mob = 200; //height
 
