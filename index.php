@@ -104,6 +104,7 @@
 					{"type": "file", "name": "MNgo ChatApp.html", "icon_src": file_icon_location, "file_src": "mngo_chatapp.html"},
 					{"type": "file", "name": "MNgo Notes.html", "icon_src": file_icon_location, "file_src": "mngo_notes.html"},
 					{"type": "file", "name": "MNgo Text Editor.html", "icon_src": file_icon_location, "file_src": "mngo_editor.html"},
+					{"type": "file", "name": "MNgo Resume Builder.html", "icon_src": file_icon_location, "file_src": "mngo_resume.html"},
 					{"type": "file", "name": "MNgo Drive.html", "icon_src": file_icon_location, "file_src": "mngo_drive.html"},
 					{"type": "file", "name": "MNgo QR.html", "icon_src": file_icon_location, "file_src": "mngo_qr.html"},
 					{"type": "file", "name": "Wi-Fi Based Chatting App.html", "icon_src": file_icon_location, "file_src": "wifi_chatapp.html"},
