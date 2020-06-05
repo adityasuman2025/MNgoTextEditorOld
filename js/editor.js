@@ -179,6 +179,10 @@
 
 	//setting height of title bar	
 		$('.title_bar').css('height', title_bar_height+"px");
+		$('.nav_bar_file_container').css('margin-top', title_bar_height + "px");
+		$('.nav_bar_file_container').css('height', window_height - title_bar_height +"px" );
+		$('.open_files_menu_bar').css('height', open_files_menu_bar_height + "px");
+		$('.file_opener').css('height', window_height - ( open_files_menu_bar_height + title_bar_height  ) + "px");
 
 	//setting height of nav_bar_file_container and nav menu bar
 		updateContainerOnResizing(window_height, window_width, title_bar_height, navigation_menu_bar_for_mob);		
@@ -194,21 +198,14 @@
 	//function to update different window sizes on resizing the browser size
 		function updateContainerOnResizing(window_height, window_width, title_bar_height, navigation_menu_bar_for_mob)
 		{
-			$('.open_files_menu_bar').css('height', open_files_menu_bar_height + "px");		
-
 			if(window_width>767)
 			{
-				$('.nav_bar_file_container').css('margin-top', title_bar_height + "px");
-				$('.nav_bar_file_container').css('height', window_height-title_bar_height-1 + "px");
 				$('.navigation_menu_bar').css('height', "100%");
-				$('.file_container').css('height', "100%");
 			}
 			else
 			{
-				$('.nav_bar_file_container').css('margin-top', title_bar_height + "px");
-				$('.nav_bar_file_container').css('height', window_height-title_bar_height + "px");
 				$('.navigation_menu_bar').css('height', navigation_menu_bar_for_mob + "px");
-				$('.file_container').css('height', window_height-(title_bar_height + navigation_menu_bar_for_mob) + "px");
+				// $('.file_opener').css('height', window_height-(title_bar_height + navigation_menu_bar_for_mob) + "px");
 			}
 		}
 	}
@@ -261,8 +258,8 @@
 		var src = (e.find('div').text());
 		$('.file_opener').load("html/" + src, function()
 		{
-			$('.open_files_menu_bar .open_files_menu_card').not(e).css("background-color", '#21221d'); //dehighlighting other cards
-			e.css("background-color", '#282923'); //highlighting this card	
+			$('.open_files_menu_bar .open_files_menu_card').not(e).css("background", '#21221d').css("color", "#9a9a98"); //de-highlighting other cards
+			e.css("background-color", '#282923').css('color', '#e2e2e2'); //highlighting this card	
 		});
 	}
 
