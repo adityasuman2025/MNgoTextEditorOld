@@ -326,6 +326,7 @@
 		color: #e2e2e2;	
 		border-radius: 10px 10px 0px 0px;
 		cursor: default;
+		overflow: hidden;
 	}
 
 	.open_files_menu_card span

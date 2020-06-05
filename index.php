@@ -88,11 +88,17 @@
 				"files":
 				[
 					{"type": "folder_title", "name": "academic_projects", "icon_src": folder_icon_location, "file_src": ""},
-					{"type": "file", "name": "Key Issue System for IIT Patna.html", "icon_src": file_icon_location, "file_src": "key_issue.html"},
-					{"type": "file", "name": "Notice Board IIT Patna.html", "icon_src": file_icon_location, "file_src": "notice_board.html"},
-					{"type": "file", "name": "IPR Module for IIT Patna.html", "icon_src": file_icon_location, "file_src": "ipr.html"},
-					{"type": "file", "name": "Wi-Fi Based Attendance System for IIT Patna.html", "icon_src": file_icon_location, "file_src": "wifi_attend.html"},
-					{"type": "file", "name": "QR Based Attendance System for IIT Patna.html", "icon_src": file_icon_location, "file_src": "qr_attend.html"},
+					{"type": "file", "name": "Feedback Module.html", "icon_src": file_icon_location, "file_src": "feedbackIITP.html"},
+					{"type": "file", "name": "Exam Attendance.html", "icon_src": file_icon_location, "file_src": "examAttendance.html"},
+					{"type": "file", "name": "Research Scholar's Board.html", "icon_src": file_icon_location, "file_src": "rsBoardIITP.html"},
+					{"type": "file", "name": "Attendance.html", "icon_src": file_icon_location, "file_src": "attendanceIITP.html"},
+					{"type": "file", "name": "Acadamic Result.html", "icon_src": file_icon_location, "file_src": "acadResultIITP.html"},
+					{"type": "file", "name": "PDA.html", "icon_src": file_icon_location, "file_src": "pdaIITP.html"},
+					{"type": "file", "name": "Key Issue System.html", "icon_src": file_icon_location, "file_src": "key_issue.html"},
+					{"type": "file", "name": "Notice Board.html", "icon_src": file_icon_location, "file_src": "notice_board.html"},
+					{"type": "file", "name": "IPR Module.html", "icon_src": file_icon_location, "file_src": "ipr.html"},
+					{"type": "file", "name": "Wi-Fi Based Attendance System.html", "icon_src": file_icon_location, "file_src": "wifi_attend.html"},
+					{"type": "file", "name": "QR Based Attendance System.html", "icon_src": file_icon_location, "file_src": "qr_attend.html"},
 					{"type": "file", "name": "Calculator.html", "icon_src": file_icon_location, "file_src": "calc.html"}
 				],
 			},
