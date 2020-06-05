@@ -138,7 +138,7 @@
 					$('.file_opener').load(menu_items_file_location + src, function()
 					{
 					//creating card of the opened file	
-						$('.open_files_menu_bar li').css("background", '#21221d'); //de-highlighting other cards
+						$('.open_files_menu_bar li').css("background", '#21221d').css("color", "#9a9a98"); //de-highlighting other cards
 
 						$('.open_files_menu_bar #open_files_menu_card_sample div').text(src);
 

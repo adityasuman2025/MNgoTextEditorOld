@@ -58,7 +58,7 @@
 		preloader($('.preloader_container'), preloader_file_location, timeout_time);
 
 	//main window stuffs
-		var project_address = "/var/www/html/MNgo/adityasuman";
+		var project_address = "MNgo/adityasuman";
 		var project_title = "MNgo Text Editor";
 
 		var folder_icon_location = "img/folder.png";
@@ -121,7 +121,7 @@
 			{"type": "file", "name": "info.html", "icon_src": file_icon_location, "file_src": "info.html"},
 		];
 
-		var title_bar_height = 27;
+		var title_bar_height = 18;
 		var open_files_menu_bar_height = 30;
 		var navigation_menu_bar_height_for_mob = 200; //height
 

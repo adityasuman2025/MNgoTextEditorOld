@@ -179,17 +179,18 @@
 		z-index: 1000;
 		width: 100%;
 		position: fixed;
-		/*height: 25px;*/
-		background-color: #282923;
-		background-image: linear-gradient(to bottom, #282923 0%, #22231f 74%);
-		border-bottom: 1px solid #282923;
+		/*padding-top: 5px;*/
+		background-color: #181915;
+		/*background-image: linear-gradient(to bottom, #282923 0%, #22231f 74%);*/
+		/*border-bottom: 1px solid #282923;*/
 	}
 
 	.title_bar_buttons
 	{
 		padding: 0px;
 		margin: 0px;
-		padding-left: 10px;
+		padding-left: 8px;
+
 		vertical-align: middle;
 		height: 100%;
 
@@ -200,9 +201,9 @@
 	.title_bar_buttons div
 	{
 		display: inline-block;
-		height: 14px;
-		width: 14px;
-		border-radius: 14px;
+		height: 12px;
+		width: 12px;
+		border-radius: 10px;
 
 		vertical-align: middle;
 		margin-right: 7px;
@@ -225,12 +226,11 @@
 
 	.title_bar_title
 	{
-		color: #5b5b5b;
 		color: #9a9a98;
 		text-align: center;
 		height: 100%;
-		line-height: 25px;
-
+		line-height: 20px;
+		font-size: 95%;
 		display: flex; 	
 	  	align-items: center; 
 	  	justify-content: center;
@@ -243,7 +243,7 @@
 		margin: 0px;
 		background: #181915;
 		overflow-y: scroll;
-		border-right: 1px #21221d solid;
+		/*border-right: 1px #21221d solid;*/
 	}
 
 	.navigation_menu_bar::-webkit-scrollbar {
@@ -267,7 +267,10 @@
 		min-width: 100%;
 		width: auto;
 		overflow-x: scroll;
+		overflow-wrap: all;
 		list-style: none;
+
+		padding-top: 5px;
 	}
 
 	.open_files_menu_bar::-webkit-scrollbar {
@@ -332,6 +335,8 @@
 	{
 		padding: 3px;
 		cursor: pointer;
+		font-size: 95%;
+		font-weight: 400;
 	}
 
 	.nav_bar_folder_icon
