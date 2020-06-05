@@ -179,16 +179,16 @@
 		z-index: 1000;
 		width: 100%;
 		position: fixed;
-		/*padding-top: 5px;*/
+		padding-top: 3px;
 		background-color: #181915;
 		/*background-image: linear-gradient(to bottom, #282923 0%, #22231f 74%);*/
-		/*border-bottom: 1px solid #282923;*/
 	}
 
 	.title_bar_buttons
 	{
 		padding: 0px;
 		margin: 0px;
+		/*padding-top: 3px;*/
 		padding-left: 8px;
 
 		vertical-align: middle;
