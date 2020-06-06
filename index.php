@@ -1,7 +1,7 @@
 <!-------counter & ip tracking-------->
 <?php
 	$website = $_SERVER['HTTP_HOST']; //dns address of the site 
-	if($website != "localhost")
+	if($website != "localhost" && $website != "localhost:8080" )
 	{
 		$ip = $_SERVER["REMOTE_ADDR"];
 		date_default_timezone_set('Asia/Kolkata');
