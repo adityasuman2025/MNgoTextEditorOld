@@ -233,15 +233,15 @@
 				var src = $('.open_files_menu_bar li:nth-child(4)').find("div").text().trim();
 
 			//highligting the nth element
-				$('.open_files_menu_bar li').css("background", '#21221d'); //dehighlting other elements
-				$('.open_files_menu_bar li:nth-child(4)').css("background", '#282923');
+				$('.open_files_menu_bar li').css("background", '#21221d').css("color", "#9a9a98"); //dehighlting other elements
+				$('.open_files_menu_bar li:nth-child(4)').css("background", '#282923').css('color', '#e2e2e2');
 			}
 		}
 		else
 		{
 		//highliting its previous element
-			$('.open_files_menu_bar li').css("background", '#21221d'); //dehighlting other elements
-			e.parent().prev().css("background", '#282923');
+			$('.open_files_menu_bar li').css("background", '#21221d').css("color", "#9a9a98"); //dehighlting other elements
+			e.parent().prev().css("background", '#282923').css('color', '#e2e2e2');
 		}
 
 	//loading the required page	
