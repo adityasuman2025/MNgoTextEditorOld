@@ -76,6 +76,7 @@
 				"files":
 				[
 					{"type": "folder_title", "name": "internship_experience", "icon_src": folder_icon_location, "file_src": ""},
+					{"type": "file", "name": "MLCertific.html", "icon_src": file_icon_location, "file_src": "mlcertific_intern.html"},
 					{"type": "file", "name": "UpBrinGO.html", "icon_src": file_icon_location, "file_src": "upbringo_intern.html"},
 					{"type": "file", "name": "ISRO Telemetry, Tracking and Command Network (ISTRAC).html", "icon_src": file_icon_location, "file_src": "isro_intern.html"},
 					{"type": "file", "name": "Oxyvin Technologies (OPC) Pvt Ltd.html", "icon_src": file_icon_location, "file_src": "oxyvin_intern.html"},
