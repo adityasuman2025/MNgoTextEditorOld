@@ -91,18 +91,25 @@
 				[
 					{"type": "folder_title", "name": "academic_projects", "icon_src": folder_icon_location, "file_src": ""},
 					{"type": "file", "name": "BTP.html", "icon_src": file_icon_location, "file_src": "BTP.html"},
+					
 					{"type": "file", "name": "Feedback Module.html", "icon_src": file_icon_location, "file_src": "feedbackIITP.html"},
+					
 					{"type": "file", "name": "Key Issue App.html", "icon_src": file_icon_location, "file_src": "keyIssueIITP.html"},
 					{"type": "file", "name": "Gate Security App.html", "icon_src": file_icon_location, "file_src": "gateSecurityIITP.html"},
+					
+					{"type": "file", "name": "Thesis Upload.html", "icon_src": file_icon_location, "file_src": "thesisIITP.html"},
 					{"type": "file", "name": "Acadamic Result.html", "icon_src": file_icon_location, "file_src": "acadResultIITP.html"},
 					{"type": "file", "name": "Exam Attendance.html", "icon_src": file_icon_location, "file_src": "examAttendance.html"},
-					{"type": "file", "name": "Research Scholar's Board.html", "icon_src": file_icon_location, "file_src": "rsBoardIITP.html"},
-					{"type": "file", "name": "Attendance Upload.html", "icon_src": file_icon_location, "file_src": "attendanceIITP.html"},
 					{"type": "file", "name": "PDF Module.html", "icon_src": file_icon_location, "file_src": "pdfIITP.html"},
 					{"type": "file", "name": "PDA Module.html", "icon_src": file_icon_location, "file_src": "pdaIITP.html"},
+					
+					{"type": "file", "name": "Research Scholar's Board.html", "icon_src": file_icon_location, "file_src": "rsBoardIITP.html"},
+					{"type": "file", "name": "Attendance Upload.html", "icon_src": file_icon_location, "file_src": "attendanceIITP.html"},
 					{"type": "file", "name": "Contribute Module.html", "icon_src": file_icon_location, "file_src": "contributeIITP.html"},
 					{"type": "file", "name": "Notice Board.html", "icon_src": file_icon_location, "file_src": "noticeBoardIITP.html"},
 					{"type": "file", "name": "IPR Module.html", "icon_src": file_icon_location, "file_src": "iprIITP.html"},
+					{"type": "file", "name": "Forms Module.html", "icon_src": file_icon_location, "file_src": "formsIITP.html"},
+
 					{"type": "file", "name": "Wi-Fi Based Attendance App.html", "icon_src": file_icon_location, "file_src": "wifi_attend.html"},
 					{"type": "file", "name": "QR Based Attendance App.html", "icon_src": file_icon_location, "file_src": "qr_attend.html"},
 					{"type": "file", "name": "Calculator.html", "icon_src": file_icon_location, "file_src": "calc.html"}
