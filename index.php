@@ -94,8 +94,8 @@
 					
 					{"type": "file", "name": "Feedback Module.html", "icon_src": file_icon_location, "file_src": "feedbackIITP.html"},
 					
-					{"type": "file", "name": "Key Issue App.html", "icon_src": file_icon_location, "file_src": "keyIssueIITP.html"},
 					{"type": "file", "name": "Gate Security App.html", "icon_src": file_icon_location, "file_src": "gateSecurityIITP.html"},
+					{"type": "file", "name": "Key Issue App.html", "icon_src": file_icon_location, "file_src": "keyIssueIITP.html"},
 					
 					{"type": "file", "name": "Thesis Upload.html", "icon_src": file_icon_location, "file_src": "thesisIITP.html"},
 					{"type": "file", "name": "Acadamic Result.html", "icon_src": file_icon_location, "file_src": "acadResultIITP.html"},
