@@ -1,25 +1,3 @@
-<!-------counter & ip tracking-------->
-<?php
-	$website = $_SERVER['HTTP_HOST']; //dns address of the site 
-	if($website != "localhost" && $website != "localhost:8080" )
-	{
-		$ip = $_SERVER["REMOTE_ADDR"];
-		date_default_timezone_set('Asia/Kolkata');
-		$time = date ("H:i:s", time());
-		$date = date ("d M Y", time());
-
-		$handleip =fopen('ip.txt', 'a');
-		$handlecnt= fopen('count.txt', 'r');
-		$currentcnt= fread($handlecnt, 1342177);
-		fwrite($handleip, "$currentcnt :---> \t \t $ip  \t \t Time :--> \t $time \t \t Date:--> \t $date \n");
-
-		$newcnt= $currentcnt + 1;
-		$handlecnt= fopen('count.txt', 'w');
-		fwrite($handlecnt, $newcnt);
-	}
-?>
-
-<!-------counter & ip tracking-------->
 <html>
 <head>
 	<title>Aditya Suman</title>
@@ -33,7 +11,7 @@
 	<script type="text/javascript" src="js/editor.js"> </script>
 
 	<meta charset="utf-8">
-	<meta name="description" content="Aditya Suman | Software Developer | Software Engineer at Toppr | Ex-Intern at MlCertific, UpBrinGO, ISRO, Oxyvin, NGCN, CatchFreeDeal | B.Tech, IIT Patna">
+	<meta name="description" content="Aditya Suman | Software Developer | Software Engineer at Byjus | Ex-Intern at UpBrinGO, ISRO, Oxyvin | B.Tech, IIT Patna">
 	<meta name="google-site-verification" content="tmpTIfxUJCSXkF8NKNgLWkRBtFpKisiSJOipCBQT8DA" />
 	<meta name="keywords" content="Aditya Suman, IIT, IIT Patna, software, developer, software developer, app development, web development, web, web application, website, android app, android, app, android studio, website, graphics, programming, coding, coder, programmer, development, enginner, software engineering, software ">
 	<meta name="robots" content="index, follow">
@@ -49,9 +27,20 @@
 
 <!---------main area------------>
 	<div class="container-fluid editor_window_container"></div>	
+	<div class="disclaimer">yo biro</div>	
 
 <!---script---------->
 	<script type="text/javascript">
+	//removing 000webhost disclamer
+		$(document).ready(function() {
+			// $('.disclaimer').remove();
+
+			const elements = document.getElementsByClassName("disclaimer");
+			while(elements.length > 0){
+				elements[0].parentNode.removeChild(elements[0]);
+    		}
+		});
+
 	//preloader stuffs
 		var preloader_file_location = "preloader.html";
 		var timeout_time = 200;
